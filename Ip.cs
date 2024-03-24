@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Data.Common;
 using System.Linq;
 using System.Numerics;
@@ -106,6 +107,11 @@ namespace Subnetter
             return "IP VALUE: "+DecimaleEbinario();
         }
 
+        public Ip Copy()
+        {
+            return new Ip(Ipv4Decimal);
+        }
+
         public static Ip operator &(Ip ip1, Ip ip2)
         {
             string[] newIpOct = new string[4];
@@ -126,6 +132,42 @@ namespace Subnetter
             }
             Ip temp = new Ip();
             return new Ip(temp.ToDecimal(newIpOct));
+        }
+        
+        public static Ip operator ++(Ip ip1)
+        {
+            int[] decimalOct = new int[4];
+            string[] temp = ip1.decimalIp.Split('.');
+            string decIp = "";
+            for(int i=0;i<temp.Length;i++)
+                decimalOct[i]= int.Parse(temp[i]);
+            if (decimalOct[3] != 255)
+            {
+                decimalOct[3]++;
+            }
+            else if (decimalOct[2] != 255)
+            {
+                decimalOct[2]++;
+            }
+            else if (decimalOct[1] != 255)
+            {
+                decimalOct[1]++;
+            }
+            else if (decimalOct[0] != 255)
+            {
+                decimalOct[0]++;
+            }
+            else
+            {
+                throw new Exception("Impossibile aggiungere 1 a quell'indirizzo IP");
+            }
+            for (int i = 0; i < temp.Length; i++)
+            {
+                decIp += decimalOct[i];
+                if (i!=3)
+                    decIp+= ".";
+            }
+            return new Ip(decIp); 
         }
     }
 }

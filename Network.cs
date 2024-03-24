@@ -10,8 +10,9 @@ namespace Subnetter
     internal class Network
     {
         static Dictionary<char, Ip> classes;
-        public Ip NetId { get; private set; }
-        public Ip Broadcast { get; private set; }
+        Ip netId;
+        Ip broadcast;
+        SubnetMask mask;
         int cidr;
 
         static Network()
@@ -24,14 +25,39 @@ namespace Subnetter
             };
         }
 
-        public Network(char ipClass,int numeroHost)
+        public Network(char ipClass, int numeroHost)
         {
             if (!classes.ContainsKey(ipClass))
                 throw new Exception("Classe invalida");
-            cidr = 32 - (int)Math.Round(Math.Log2(numeroHost+2), MidpointRounding.ToPositiveInfinity);
-            SubnetMask mask = new SubnetMask(cidr);
+            cidr = 32 - (int)Math.Round(Math.Log2(numeroHost + 2), MidpointRounding.ToPositiveInfinity);
+            Mask = new SubnetMask(cidr);
             NetId = classes[ipClass] & mask;
-            //TODO: BROADCAST,WILDCARD SUBNET & VARIUS ERROR HANDLING
+        }
+
+        public Ip NetId 
+        {
+            get { return netId.Copy(); }
+            private set { netId = value; }
+        }
+
+        public Ip Broadcast
+        {
+            get { return broadcast.Copy(); } 
+            private set {  broadcast = value; }
+        }
+
+        public SubnetMask Mask
+        {
+            get
+            {
+                return new SubnetMask(mask.Cidr);
+            }
+            private set { mask = value; }
+        }
+
+        public Ip FirstIp
+        {
+            get { Ip FirstIp = ++NetId; return FirstIp; }
         }
 
         public int MaxHost
