@@ -169,5 +169,23 @@ namespace Subnetter
             }
             return new Ip(decIp); 
         }
+
+        public static Ip operator |(Ip ip1, Ip ip2)
+        {
+            string[] newIpOct = new string[4];
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (ip1.oct[i][j] == '0' && ip2.oct[i][j] == '0')
+                        newIpOct[i] += '0';
+                    else
+                        newIpOct[i] += '1';
+                }
+            }
+            Ip temp = new Ip();
+            return new Ip(temp.ToDecimal(newIpOct));
+        }
+
     }
 }

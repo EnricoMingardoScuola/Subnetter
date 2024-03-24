@@ -32,6 +32,7 @@ namespace Subnetter
             cidr = 32 - (int)Math.Round(Math.Log2(numeroHost + 2), MidpointRounding.ToPositiveInfinity);
             Mask = new SubnetMask(cidr);
             NetId = classes[ipClass] & mask;
+            Broadcast = NetId | mask.WildCardMask();
         }
 
         public Ip NetId 
@@ -65,9 +66,10 @@ namespace Subnetter
             get { return (int)Math.Pow(2, 32 - cidr); }
         }
 
+
         public override string ToString()
         {
-            return $"NetId: {NetId.Ipv4Decimal}/{cidr}";
+            return $"NetId: {NetId.Ipv4Decimal}/{cidr} --- Broadcast: {Broadcast.Ipv4Decimal}/{cidr}";
         }
     }
 }

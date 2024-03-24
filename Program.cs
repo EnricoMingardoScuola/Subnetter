@@ -12,13 +12,14 @@
             PrintMenu();
             try
             {
-                LAN1 = new Network('c', 1);
+                LAN1 = new Network('c', 2);
                 Console.WriteLine(LAN1.ToString());
-                Console.WriteLine(LAN1.MaxHost);
+                Console.WriteLine("MAXHOST LAN1 "+LAN1.MaxHost);
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            Console.WriteLine(s1.WildCardMask().ToString());
-            Console.WriteLine(LAN1.FirstIp.ToString());
+            Console.WriteLine("WILDCARD MASK "+s1.WildCardMask().ToString());
+            Console.WriteLine("FIRST IP LAN1 "+LAN1.FirstIp.ToString());
+            Console.WriteLine("BROADCAST LAN1 "+LAN1.Broadcast);
             Console.ReadLine();
         }
 
