@@ -1,0 +1,15 @@
+C:\Users\imd4r\Desktop\Subnetter\bin\Debug\net6.0\Subnetter.exe
+C:\Users\imd4r\Desktop\Subnetter\bin\Debug\net6.0\Subnetter.deps.json
+C:\Users\imd4r\Desktop\Subnetter\bin\Debug\net6.0\Subnetter.runtimeconfig.json
+C:\Users\imd4r\Desktop\Subnetter\bin\Debug\net6.0\Subnetter.dll
+C:\Users\imd4r\Desktop\Subnetter\bin\Debug\net6.0\Subnetter.pdb
+C:\Users\imd4r\Desktop\Subnetter\obj\Debug\net6.0\Subnetter.csproj.AssemblyReference.cache
+C:\Users\imd4r\Desktop\Subnetter\obj\Debug\net6.0\Subnetter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\imd4r\Desktop\Subnetter\obj\Debug\net6.0\Subnetter.AssemblyInfoInputs.cache
+C:\Users\imd4r\Desktop\Subnetter\obj\Debug\net6.0\Subnetter.AssemblyInfo.cs
+C:\Users\imd4r\Desktop\Subnetter\obj\Debug\net6.0\Subnetter.csproj.CoreCompileInputs.cache
+C:\Users\imd4r\Desktop\Subnetter\obj\Debug\net6.0\Subnetter.dll
+C:\Users\imd4r\Desktop\Subnetter\obj\Debug\net6.0\refint\Subnetter.dll
+C:\Users\imd4r\Desktop\Subnetter\obj\Debug\net6.0\Subnetter.pdb
+C:\Users\imd4r\Desktop\Subnetter\obj\Debug\net6.0\Subnetter.genruntimeconfig.cache
+C:\Users\imd4r\Desktop\Subnetter\obj\Debug\net6.0\ref\Subnetter.dll
