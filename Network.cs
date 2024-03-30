@@ -9,6 +9,7 @@ namespace Subnetter
 {
     internal class Network
     {
+        public string Name { get; private set; }
         static Dictionary<char, Ip> classes;
         Ip netId;
         Ip broadcast;
@@ -25,7 +26,7 @@ namespace Subnetter
             };
         }
 
-        public Network(char ipClass, int numeroHost)
+        public Network(string nome,char ipClass, int numeroHost)
         {
             if (!classes.ContainsKey(ipClass))
                 throw new Exception("Classe invalida");
@@ -69,7 +70,7 @@ namespace Subnetter
 
         public override string ToString()
         {
-            return $"NetId: {NetId.Ipv4Decimal}/{cidr} --- Broadcast: {Broadcast.Ipv4Decimal}/{cidr}";
+            return $"{Name} - NetId: {NetId.Ipv4Decimal}/{cidr} --- Broadcast: {Broadcast.Ipv4Decimal}/{cidr}";
         }
     }
 }

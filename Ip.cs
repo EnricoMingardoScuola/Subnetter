@@ -89,7 +89,7 @@ namespace Subnetter
 
         protected string DecimaleEbinario()
         {
-            return $"DECIMALE: {Ipv4Decimal} ---- BINARIO: {Ipv4Binary}";
+            return $"DECIMAL: {Ipv4Decimal} ---- BINARY: {Ipv4Binary}";
         }
 
         public string Ipv4Decimal
@@ -147,14 +147,20 @@ namespace Subnetter
             }
             else if (decimalOct[2] != 255)
             {
+                decimalOct[3] = 0;
                 decimalOct[2]++;
             }
             else if (decimalOct[1] != 255)
             {
+                decimalOct[3] = 0;
+                decimalOct[2] = 0;
                 decimalOct[1]++;
             }
             else if (decimalOct[0] != 255)
             {
+                decimalOct[3] = 0;
+                decimalOct[2] = 0;
+                decimalOct[1] = 0;
                 decimalOct[0]++;
             }
             else

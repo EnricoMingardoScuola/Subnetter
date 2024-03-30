@@ -4,22 +4,33 @@
     {
         static void Main(string[] args)
         {
-            Ip ip1 = new Ip("10.0.15.0");
-            Console.WriteLine(ip1.ToString());
+            Ip ip1 = new Ip("255.255.255.255");
+            Console.WriteLine("IP1 : "+ip1.ToString());
             SubnetMask s1 = new SubnetMask(17);
-            Console.WriteLine(s1.ToString());
+            Console.WriteLine("SUBNET MASK "+ s1.ToString());
             Network LAN1 = null;
             PrintMenu();
             try
             {
-                LAN1 = new Network('c', 2);
+                LAN1 = new Network("LAN1",'c', 254);
                 Console.WriteLine(LAN1.ToString());
                 Console.WriteLine("MAXHOST LAN1 "+LAN1.MaxHost);
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { PrintError(ex.Message); }
             Console.WriteLine("WILDCARD MASK "+s1.WildCardMask().ToString());
             Console.WriteLine("FIRST IP LAN1 "+LAN1.FirstIp.ToString());
             Console.WriteLine("BROADCAST LAN1 "+LAN1.Broadcast);
+            Ip NextLan = LAN1.Broadcast;
+            try
+            {
+                NextLan++;
+            }catch (Exception ex) { PrintError(ex.Message); }
+            Console.WriteLine("NEXT LAN: " + (NextLan.ToString()));
+            try
+            {
+                Console.WriteLine((++ip1).ToString());
+            }catch (Exception ex) { PrintError(ex.Message); }
+
             Console.ReadLine();
         }
 
@@ -32,7 +43,9 @@
 
         static void PrintError(string message)
         {
-
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(message);
+            Console.ResetColor();
         }
     }
 }
