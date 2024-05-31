@@ -10,12 +10,12 @@ namespace Subnetter
     internal class Network
     {
         public string Name { get; private set; }
-        static Dictionary<char, Ip> classes;
+        static public Dictionary<char, Ip> classes { get; private set; }
         Ip netId;
         Ip broadcast;
         SubnetMask mask;
         int cidr;
-
+        public int requiredHost { get; private set; }
         static Network()
         {
             classes = new Dictionary<char, Ip>()
@@ -26,14 +26,30 @@ namespace Subnetter
             };
         }
 
-        public Network(string nome,char ipClass, int numeroHost)
+        public Network(string nome,char ipClass, int numeroHost) //inizializzazione della prima lan
         {
             if (!classes.ContainsKey(ipClass))
                 throw new Exception("Classe invalida");
             cidr = 32 - (int)Math.Round(Math.Log2(numeroHost + 2), MidpointRounding.ToPositiveInfinity);
             Mask = new SubnetMask(cidr);
+            char.ToLower(ipClass);
             NetId = classes[ipClass] & mask;
             Broadcast = NetId | mask.WildCardMask();
+            requiredHost = numeroHost;
+            Name = nome;
+        }
+
+        public Network(string nome, Ip previusBroadcast, int numeroHost) //inizializzazione per le lan successive
+        {
+            cidr = 32 - (int)Math.Round(Math.Log2(numeroHost + 2), MidpointRounding.ToPositiveInfinity);
+            Mask = new SubnetMask(cidr);
+            try
+            {
+                NetId = ++previusBroadcast;
+            } catch (Exception e) { throw e; }
+            Broadcast = NetId | mask.WildCardMask();
+            requiredHost = numeroHost;
+            Name = nome;
         }
 
         public Ip NetId 
@@ -64,13 +80,12 @@ namespace Subnetter
 
         public int MaxHost
         {
-            get { return (int)Math.Pow(2, 32 - cidr); }
+            get { return (int)Math.Pow(2, 32 - cidr) - 2; }
         }
-
 
         public override string ToString()
         {
-            return $"{Name} - NetId: {NetId.Ipv4Decimal}/{cidr} --- Broadcast: {Broadcast.Ipv4Decimal}/{cidr}";
+            return $"{Name} - NetId: {NetId.Ipv4Decimal}/{cidr} --- Broadcast: {Broadcast.Ipv4Decimal}/{cidr} --- Numero richiesto di host: {requiredHost} --- Numero max di host: {MaxHost}";
         }
     }
 }

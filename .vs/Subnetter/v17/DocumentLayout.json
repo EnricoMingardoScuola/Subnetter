@@ -1,0 +1,92 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\SCUOLA\\Subnetter\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B3C5A388-DDF6-4B1E-859B-89BB37D8D354}|Subnetter.csproj|d:\\scuola\\subnetter\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3C5A388-DDF6-4B1E-859B-89BB37D8D354}|Subnetter.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3C5A388-DDF6-4B1E-859B-89BB37D8D354}|Subnetter.csproj|d:\\scuola\\subnetter\\network.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3C5A388-DDF6-4B1E-859B-89BB37D8D354}|Subnetter.csproj|solutionrelative:network.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3C5A388-DDF6-4B1E-859B-89BB37D8D354}|Subnetter.csproj|d:\\scuola\\subnetter\\ip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3C5A388-DDF6-4B1E-859B-89BB37D8D354}|Subnetter.csproj|solutionrelative:ip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3C5A388-DDF6-4B1E-859B-89BB37D8D354}|Subnetter.csproj|d:\\scuola\\subnetter\\subnetmask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3C5A388-DDF6-4B1E-859B-89BB37D8D354}|Subnetter.csproj|solutionrelative:subnetmask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Ip.cs",
+              "DocumentMoniker": "D:\\SCUOLA\\Subnetter\\Ip.cs",
+              "RelativeDocumentMoniker": "Ip.cs",
+              "ToolTip": "D:\\SCUOLA\\Subnetter\\Ip.cs",
+              "RelativeToolTip": "Ip.cs",
+              "ViewState": "AQIAAI0AAAAAAAAAAAAqwLIAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T16:30:15.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SubnetMask.cs",
+              "DocumentMoniker": "D:\\SCUOLA\\Subnetter\\SubnetMask.cs",
+              "RelativeDocumentMoniker": "SubnetMask.cs",
+              "ToolTip": "D:\\SCUOLA\\Subnetter\\SubnetMask.cs",
+              "RelativeToolTip": "SubnetMask.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAIwFUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T16:30:15.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Network.cs",
+              "DocumentMoniker": "D:\\SCUOLA\\Subnetter\\Network.cs",
+              "RelativeDocumentMoniker": "Network.cs",
+              "ToolTip": "D:\\SCUOLA\\Subnetter\\Network.cs",
+              "RelativeToolTip": "Network.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAYwD8AAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T16:30:15.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\SCUOLA\\Subnetter\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\SCUOLA\\Subnetter\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAUwEEAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T16:30:15.789Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
