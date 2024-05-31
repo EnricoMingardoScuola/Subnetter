@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Subnetter")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e753399f3cb5e76f4a9f3d812eb99bb1879f632")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c384e8fdf6775159d3e554a7673c34f8d1be06bd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Subnetter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Subnetter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

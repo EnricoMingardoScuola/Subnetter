@@ -7,6 +7,7 @@ namespace Subnetter
     {
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             int nNetworks;
             string nome;
             char privateIpClass;
@@ -15,6 +16,7 @@ namespace Subnetter
             Console.WriteLine("Quante sottoreti con tecnica VLSM hai bisogno?");
             try
             {
+                Console.Write("Risposta: ");
                 nNetworks = int.Parse(Console.ReadLine());
             }
             catch (Exception e) { PrintError(e.Message); Console.ReadLine(); return; }
@@ -25,7 +27,9 @@ namespace Subnetter
             }
             try
             {
+                Console.Write("Risposta: ");
                 privateIpClass = char.Parse(Console.ReadLine());
+                privateIpClass = char.ToUpper(privateIpClass);
                 if (!Network.classes.ContainsKey(privateIpClass)) throw new Exception("Classe non valida");
             }
             catch (Exception e) { PrintError(e.Message); Console.ReadLine(); return; }
@@ -33,10 +37,13 @@ namespace Subnetter
             {
                 Console.Clear();
                 Console.WriteLine($"Come si chiama la network numero {i + 1} ?");
+                Console.Write("Risposta: ");
                 nome = Console.ReadLine();
                 Console.WriteLine("Di quanti host hai bisogno?");
                 try
                 {
+                    Console.Write("Risposta: ");
+
                     nHost.Add(int.Parse(Console.ReadLine()));
                     nameAndHosts.Add(nome, nHost[i]); //salvo il nome con la chiave che è il numero degli host
                 }
@@ -53,10 +60,13 @@ namespace Subnetter
                     networks[i] = new Network(SearchFirstValueInDictionary(nameAndHosts, nHost[i]), networks[i - 1].Broadcast, nHost[i]);
                 }catch(Exception e) { PrintError(e.Message); return; }
             }
+            Console.Clear();
+            Console.WriteLine("------------SUBNETTING CALCOLATO------------");
             foreach (var network in networks)
             {
                 Console.WriteLine(network);
             }
+            Console.ReadLine();
         }
         static string SearchFirstValueInDictionary(Dictionary<string, int> dictionary, int value)
         {

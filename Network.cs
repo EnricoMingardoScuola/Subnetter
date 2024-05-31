@@ -20,9 +20,9 @@ namespace Subnetter
         {
             classes = new Dictionary<char, Ip>()
             {
-                ['a'] = new Ip("10.0.0.0"),
-                ['b'] = new Ip("172.16.0.0"),
-                ['c'] = new Ip("192.168.0.0")
+                ['A'] = new Ip("10.0.0.0"),
+                ['B'] = new Ip("172.16.0.0"),
+                ['C'] = new Ip("192.168.0.0")
             };
         }
 
@@ -32,7 +32,7 @@ namespace Subnetter
                 throw new Exception("Classe invalida");
             cidr = 32 - (int)Math.Round(Math.Log2(numeroHost + 2), MidpointRounding.ToPositiveInfinity);
             Mask = new SubnetMask(cidr);
-            char.ToLower(ipClass);
+            ipClass = char.ToUpper(ipClass);
             NetId = classes[ipClass] & mask;
             Broadcast = NetId | mask.WildCardMask();
             requiredHost = numeroHost;
